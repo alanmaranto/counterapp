@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-
   final counterStyle = TextStyle(fontSize: 25);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Title'),
-          centerTitle: true,
-        ),
-        body: Center(
-            child: Column(
+      appBar: AppBar(
+        title: Text('Title'),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
@@ -24,6 +23,14 @@ class HomePage extends StatelessWidget {
               style: counterStyle,
             ),
           ],
-        )));
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          print('hey');
+        },
+        child: Icon(Icons.add),
+      ),
+    );
   }
 }
