@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
   final counterStyle = TextStyle(fontSize: 25);
+  final counter = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,7 @@ class HomePage extends StatelessWidget {
               style: counterStyle,
             ),
             Text(
-              '0',
+              '$counter',
               style: counterStyle,
             ),
           ],
@@ -29,6 +30,7 @@ class HomePage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           print('hey');
+          // counter = counter + 1;
         },
         child: Icon(Icons.add),
       ),
