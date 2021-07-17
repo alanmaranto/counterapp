@@ -40,12 +40,25 @@ class _CounterPageState extends State<CounterPage> {
       mainAxisAlignment: MainAxisAlignment.end,
       children: <Widget>[
         SizedBox(width: 30.0),
-        FloatingActionButton(onPressed: null, child: Icon(Icons.exposure_zero)),
+        FloatingActionButton(
+            onPressed: _reset, child: Icon(Icons.exposure_zero)),
         Expanded(child: SizedBox()),
-        FloatingActionButton(onPressed: null, child: Icon(Icons.remove)),
+        FloatingActionButton(onPressed: _sustract, child: Icon(Icons.remove)),
         SizedBox(width: 5.0),
-        FloatingActionButton(onPressed: null, child: Icon(Icons.add)),
+        FloatingActionButton(onPressed: _add, child: Icon(Icons.add)),
       ],
     );
+  }
+
+  void _add() {
+    setState(() => _counter++);
+  }
+
+  void _sustract() {
+    setState(() => _counter--);
+  }
+
+  void _reset() {
+    setState(() => _counter = 0);
   }
 }
