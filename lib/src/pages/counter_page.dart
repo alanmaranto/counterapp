@@ -55,7 +55,10 @@ class _CounterPageState extends State<CounterPage> {
   }
 
   void _sustract() {
-    setState(() => _counter--);
+    if (_counter <= 0) {
+      setState(() => _counter = 0);
+    } else
+      setState(() => _counter--);
   }
 
   void _reset() {
