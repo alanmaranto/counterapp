@@ -12,34 +12,40 @@ class _CounterPageState extends State<CounterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Title'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Clicks Taps',
-              style: _counterStyle,
-            ),
-            Text(
-              '$_counter',
-              style: _counterStyle,
-            ),
-          ],
+        appBar: AppBar(
+          title: Text('Title'),
+          centerTitle: true,
         ),
-      ),
-      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            _counter++;
-          });
-        },
-        child: Icon(Icons.add),
-      ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Clicks Taps',
+                style: _counterStyle,
+              ),
+              Text(
+                '$_counter',
+                style: _counterStyle,
+              ),
+            ],
+          ),
+        ),
+        // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButton: _createButtons());
+  }
+
+  Widget _createButtons() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: <Widget>[
+        SizedBox(width: 30.0),
+        FloatingActionButton(onPressed: null, child: Icon(Icons.exposure_zero)),
+        Expanded(child: SizedBox()),
+        FloatingActionButton(onPressed: null, child: Icon(Icons.remove)),
+        SizedBox(width: 5.0),
+        FloatingActionButton(onPressed: null, child: Icon(Icons.add)),
+      ],
     );
   }
 }
